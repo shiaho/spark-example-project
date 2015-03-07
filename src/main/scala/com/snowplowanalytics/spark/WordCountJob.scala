@@ -20,11 +20,7 @@ object WordCountJob {
   def main(args: Array[String]) {
     
     // Run the word count
-    WordCount.execute(
-      master    = sys.env("MASTER"),
-      args      = args.toList,
-      jars      = SparkContext.jarOfObject(this)
-    )
+    WordCount.execute(master = "local[4]", args = args.toList, jars = SparkContext.jarOfObject(this).toSeq)
 
     // Exit with success
     System.exit(0)

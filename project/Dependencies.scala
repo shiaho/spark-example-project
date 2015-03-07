@@ -15,12 +15,13 @@ import sbt._
 object Dependencies {
   val resolutionRepos = Seq(
     "Akka Repository" at "http://repo.akka.io/releases/",
-    "Spray Repository" at "http://repo.spray.cc/"
+    "Spray Repository" at "http://repo.spray.cc/",
+    "Scalaz Bintray Repo"  at "http://dl.bintray.com/scalaz/releases"
   )
 
   object V {
-    val spark     = "0.8.1-incubating"
-    val specs2    = "1.12.3" // -> "1.13" when we bump to Scala 2.10.0
+    val spark     = "1.3.0"
+    val specs2    = "2.4.15" // -> "1.13" when we bump to Scala 2.10.0
     val guava     = "11.0.1"
     // Add versions for your additional libraries here...
   }
@@ -30,7 +31,7 @@ object Dependencies {
     // Add additional libraries from mvnrepository.com (SBT syntax) here...
 
     // Scala (test only)
-    val specs2       = "org.specs2"                 % "specs2_2.9.2"           % V.specs2       % "test"
+    val specs2       = "org.specs2"                 % "specs2_2.10"           % V.specs2       % "test"
     val guava        = "com.google.guava"           % "guava"                  % V.guava        % "test"
   }
 }
